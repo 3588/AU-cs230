@@ -1,0 +1,172 @@
+#include <iostream>
+#include "polynomial.h"
+#include <fstream>
+using namespace std;
+void word(int);
+void get_data(poly&,poly&,poly&,poly&);
+void set_data(poly&, ifstream&);
+void put_data(poly,poly,poly,poly);
+void evaluate(poly,poly,poly,poly);
+void add_data(poly&,poly&,poly&,poly&);
+vector <int> v1, v2;
+
+int main()
+{
+	poly t1,t2,t3,t4;
+	int choose;
+	while (1)
+	{
+		word(1);
+		cin>>choose;
+		switch (choose)
+		{
+		case 1:
+			get_data(t1,t2,t3,t4);
+			break;
+		case 2:
+			get_data(t1,t2,t3,t4);
+			get_data(t1,t2,t3,t4);
+			break;
+		case 3:
+			evaluate(t1,t2,t3,t4);
+			get_data(t1,t2,t3,t4);
+			break;
+		case 4:
+			add_data(t1,t2,t3,t4);
+			get_data(t1,t2,t3,t4);
+			break;
+		}
+	}
+return 0;
+}
+void word(int choose)
+{
+	switch (choose)
+	{
+	case 1:
+		cout<<"===============================\n"
+			   <<"1.Get data from input.txt .\n"
+			   <<"2.Show the polynomial.\n"
+			   <<"3.Evaluate a polynomial at a given value.\n"
+			   <<"4.Add two polynomials. \n"
+			   <<"5.Subtract two polynomials. \n"
+			   <<"6.Multiply two polynomials. \n"
+			   <<"===============================\n";
+			break;
+	}
+	
+}
+void get_data(poly& t1,poly& t2,poly& t3,poly& t4)
+{
+	ifstream in;
+	in.open("input.txt");
+		int next=1;
+	while (!in.eof())
+	{
+	
+		vector <int> v1,v2;
+		while (next)
+		{	
+			int x,y;
+			char ch_t;
+			in>>x;
+			in>>y;
+			in.get(ch_t);
+			if (ch_t=='\n')
+			{
+				v1.push_back(x);
+				v2.push_back(y);
+				next=0;
+			}
+			else
+			{
+				v1.push_back(x);
+				v2.push_back(y);
+			}
+		}
+	
+
+
+		//	set_data(t2,in);
+		//set_data(t3,in);
+		//		set_data(t4,in);
+
+	}
+		t1.creat(v1,v2);
+	in.close();
+}
+void set_data(poly& t,ifstream &in)
+{
+	
+
+}
+void put_data(poly t1,poly t2,poly t3,poly t4)
+{
+cout<<"Polynomial 1 "<<t1<<"\n"
+	   <<"Polynomial 2 "<<t2<<"\n"
+	   <<"Polynomial 3 "<<t3<<"\n"
+	   <<"Polynomial 4 "<<t4<<"\n";
+}
+void evaluate(poly t1,poly t2,poly t3,poly t4)
+{
+	cout<<"enter the x: ";
+	double x;
+	cin>>x;
+put_data(t1,t2,t3,t4);
+get_data(t1,t2,t3,t4);
+cout<<"after evaluate\n";
+cout<<"f1 ( "<<x<<" ) ";
+t1.evaluate(t1,x);
+cout<<"f2 ( "<<x<<" ) ";
+t2.evaluate(t2,x);
+cout<<"f3 ( "<<x<<" ) ";
+t3.evaluate(t3,x);
+cout<<"f4 ( "<<x<<" ) ";
+t4.evaluate(t4,x);
+}
+void add_data(poly &t1,poly &t2,poly &t3,poly &t4)
+{
+	int x,y;
+	put_data(t1,t2,t3,t4);
+	get_data(t1,t2,t3,t4);
+	cout<<"Polynomial x ADD Polynomial y\n"
+		<<"Enter X: ";
+	cin>>x;
+	cout<<"Enter Y: ";
+	cin>>y;
+	poly a0,a1,a2;
+	switch (x)
+	{
+	case 1:
+		a1=t1;
+		break;
+	case 2:
+		a1=t2;
+		break;
+	case 3:
+		a1=t3;
+		break;
+	case 4:
+		a1=t4;
+		break;
+
+	}
+	switch (y)
+	{
+	case 1:
+		a2=t1;
+		break;
+	case 2:
+		a2=t2;
+		break;
+	case 3:
+		a2=t3;
+		break;
+	case 4:
+		a2=t4;
+		break;
+
+	}
+	cout<<a1<<a2; 
+	cout<<a1+a2;
+	}

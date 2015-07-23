@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ArrayList", "ArrayList\ArrayList.vcproj", "{AEF525E1-A748-46F1-8CE2-48F2C331FFB2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AEF525E1-A748-46F1-8CE2-48F2C331FFB2}.Debug|Win32.ActiveCfg = Debug|Win32
+		{AEF525E1-A748-46F1-8CE2-48F2C331FFB2}.Debug|Win32.Build.0 = Debug|Win32
+		{AEF525E1-A748-46F1-8CE2-48F2C331FFB2}.Release|Win32.ActiveCfg = Release|Win32
+		{AEF525E1-A748-46F1-8CE2-48F2C331FFB2}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

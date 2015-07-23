@@ -1,0 +1,26 @@
+#ifndef POLY_H
+#define POLY_H
+#include <iostream>
+#include <cstdlib>
+#include <cstddef>
+
+using namespace std;
+typedef int* intptr;
+class poly
+{
+public:
+	poly();
+	poly(int a);
+	poly(const poly& p);
+	~poly();
+	void creat();
+	friend poly operator +(const poly& p1,const poly& p2);
+	friend poly operator -(const poly& p1,const poly& p2);
+	friend poly operator *(const poly& p1,const poly& p2);
+	poly& operator =(const poly& p);
+	friend ostream& operator <<(ostream& outs,const poly& p);
+private:
+	intptr polyomial;
+	int len;
+};
+#endif

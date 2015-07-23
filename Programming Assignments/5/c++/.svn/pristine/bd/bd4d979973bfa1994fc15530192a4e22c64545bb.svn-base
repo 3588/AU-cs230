@@ -1,0 +1,14 @@
+#include<iostream>
+#include "poly.h"
+using namespace std;
+
+
+int main()
+{
+	poly t1,t2;
+	t1.creat();
+	cout<<t1;
+	t2.creat();
+	cout<<t2;
+	return 0;
+}
